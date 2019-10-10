@@ -45,12 +45,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.foods)
+    // console.log(this.state.foods)
     return (
       <div className="App">
         {
         this.state.loggedIn
-          ? <Home />
+          ? <Home foods={this.state.foods} />
           : <Login fetchFoods={this.fetchFoods} />
         }
         
