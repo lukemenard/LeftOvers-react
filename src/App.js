@@ -8,7 +8,8 @@ import Login from './Components/Login/Login'
 class App extends Component {
   state = {
     loggedIn: false,
-    foods: []
+    foods: [],
+    userId: 0
   }
 
   componentDidMount() {
@@ -19,7 +20,7 @@ class App extends Component {
 
   logIn = () => {
     this.setState({
-      loggedIn: true
+      loggedIn: !this.state.loggedIn
     })
   }
 
@@ -33,7 +34,8 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(foods => this.setState({
-      foods: foods
+      foods: foods,
+      userId: foods[0].user.id
     }))
     .catch(error => console.log('Error:', error))
   }
@@ -45,7 +47,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.foods)
     return (
       <div className="App">
         {
