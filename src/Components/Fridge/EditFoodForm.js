@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 
-export default class NewFoodForm extends Component {
+export default class EditFoodForm extends Component {
     state = {
-        food_name: '',
-        expiration_date: '',
-        quantity: '',
-        quantity_unit: '',
-        value: '',
-        food_category: ''
+        food_name: this.props.food.food_name,
+        expiration_date: this.props.food.expiration_date,
+        quantity: this.props.food.quantity,
+        quantity_unit: this.props.food.quantity_unit,
+        value: this.props.food.value,
+        food_category: this.props.food.food_category,
+        id: this.props.food.id
     }
 
     handleChange = (event) => {
@@ -19,9 +20,9 @@ export default class NewFoodForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const { addFood, toggleFoodForm } = this.props
-        addFood(this.state)
-        toggleFoodForm()
+        const { toggleEditForm, updateFood } = this.props
+        updateFood(this.state)
+        toggleEditForm()
         this.setState({
             food_name: '',
             expiration_date: '',
