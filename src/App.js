@@ -23,6 +23,15 @@ class App extends Component {
     })
   }
 
+  logOut = () => {
+    localStorage.clear()
+    window.location.href = 'http://localhost:3001/'
+    this.setState({
+      loggedIn: false,
+      foods: []
+    })
+  }
+
   fetchFoods = () => {
     this.logIn()
     fetch('http://localhost:3000/foods', {
@@ -104,7 +113,7 @@ class App extends Component {
       <div className="App">
         {
         this.state.loggedIn
-          ? <Home foods={this.state.foods} addFood={this.addFood} deleteFood={this.deleteFood} updateFood={this.updateFood} />
+          ? <Home logOut={this.logOut} foods={this.state.foods} addFood={this.addFood} deleteFood={this.deleteFood} updateFood={this.updateFood} />
           : <Login fetchFoods={this.fetchFoods} />
         }
       </div>

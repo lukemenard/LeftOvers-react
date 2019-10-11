@@ -7,12 +7,13 @@ import Recipe from '../Recipe/Recipe'
 
 export default class Home extends Component {
     render() {
+        const { logOut } = this.props
         return (
             <div>
                 <Router>
                     <div>
-                        <NavBar />
-                        <Route exact path='/fridge' render={(props) => <Fridge {...this.props} />} />
+                        <NavBar logOut={logOut}/>
+                        <Route exact path='/' render={(props) => <Fridge {...this.props} />} />
                         <Route exact path='/dashboard' component={WasteDashboard} />
                         <Route exact path='/recipe' component={Recipe} />
                     </div>
