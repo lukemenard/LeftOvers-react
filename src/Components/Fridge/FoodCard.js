@@ -88,10 +88,11 @@ export default class FoodCard extends Component {
                     <div className='food-card-header'>
                         <h3 className={`food-card-title ${this.dynamicHeaderColor(food.expiration_date)}`}>{food.food_name}</h3>
                     </div>
+                    <img className='food-card-delete-button' onClick={() => deleteFood(food.id)} src='https://image.flaticon.com/icons/svg/59/59836.svg' alt='delete button' />
                     <p>{this.dateDifference(food.expiration_date)} days</p>
                     <p>{food.quantity} {food.quantity_unit}</p>
                     <img className='food-card-edit-button' onClick={() => this.toggleEditForm()} src='https://image.flaticon.com/icons/svg/1159/1159633.svg' alt='update button' />
-                    <img className='food-card-delete-button' onClick={() => deleteFood(food.id)} src='https://image.flaticon.com/icons/svg/1214/1214428.svg' alt='delete button' />
+                    <img className='food-card-waste-button' onClick={() => null} src='https://image.flaticon.com/icons/svg/149/149343.svg' alt='waste button' />
                 </div>
             }
             </div>

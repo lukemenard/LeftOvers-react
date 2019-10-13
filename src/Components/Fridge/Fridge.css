@@ -86,12 +86,25 @@
 }
 
 .food-card-delete-button {
-    height: 1rem;
+    display: none;
+}
+
+.food-card:hover .food-card-delete-button {
+    display: inline-block;
+    height: .7rem;
+    position: relative;
+    top: -3.1rem;
+    right: -6.4rem;
 }
 
 .food-card-edit-button {
     height: 1rem;
     margin-right: 1.5rem;
+    margin-top: 1rem;
+}
+
+.food-card-waste-button {
+    height: 1rem;
     margin-top: 1rem;
 }
 
