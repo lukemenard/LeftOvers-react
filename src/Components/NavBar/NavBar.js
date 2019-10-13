@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 import './NavBar.css'
+import logo from './logout.svg'
 
 const NavBar = ({ logOut }) => {
     return (
@@ -10,7 +11,7 @@ const NavBar = ({ logOut }) => {
                 <NavLink className='link' to='/'>Fridge</NavLink>
                 <NavLink className='link' to='/dashboard'>Dashboard</NavLink>
                 <NavLink className='link' to='/recipe'>Find a Recipe</NavLink>
-                <img src='https://image.flaticon.com/icons/svg/126/126467.svg' alt='logout button' className='logout-button' onClick={logOut} />
+                <img src={logo} alt='logout button' className='logout-button' onClick={logOut} />
             </div>
         </div>
     );

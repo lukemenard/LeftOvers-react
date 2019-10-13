@@ -1,6 +1,7 @@
 .login-title {
     font-size: 4rem;
-    font-weight: 100;
+    font-weight: bold;
+    letter-spacing: .3rem;
 }
 
 .login-message {
@@ -10,8 +11,10 @@
 
 .login-container {
     text-align: center;
-    height: 100%;
+    height: 50rem;
     width: 100%;
+    background-color: rgb(42, 42, 58);
+    color: white;
 }
 
 .login-form {
@@ -23,19 +26,35 @@
 .username-input {
     height: 2.8rem;
     width: 30rem;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 2rem;
+    border: 0;
+    text-align: left;
+    border-bottom: 1px white solid;
+    background-color: rgb(42, 42, 58);
+    color: white;
     margin: 1rem;
     font-size: 1rem;
+}
+
+.new-name-input {
+    background-color: rgb(42, 42, 58);
+    border: 0;
+    border-bottom: 1px white solid;
+}
+
+.new-username-input {
+    background-color: rgb(42, 42, 58);
+    border: 0;
+    border-bottom: 1px white solid;
 }
 
 .password-input {
     height: 2.8rem;
     width: 30rem;
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 2rem;
+    border: 0;
+    text-align: left;
+    border-bottom: 1px white solid;
+    background-color: rgb(42, 42, 58);
+    color: white;
     margin: 1rem;
     font-size: 1rem;
 }
@@ -43,17 +62,17 @@
 .button-login {
     height: 3rem;
     width: 7.2rem;
-    /* border-radius: 2rem; */
-    border: none;
+    border-radius: 2rem;
+    border: 1px black solid;
     margin: 1rem;
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .button-newUser {
     height: 3rem;
     width: 7.2rem;
-    /* border-radius: 2rem; */
-    border: none;
+    border-radius: 2rem;
+    border: 1px black solid;
     margin: 1rem;
-    font-size: 1rem;
+    font-size: .8rem;
 }

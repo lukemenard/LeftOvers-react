@@ -51,28 +51,30 @@ export default class CreateUserForm extends Component {
     }
 
     render() {
-        const { username, password, firstName, lastName } = this.state
+        const { username, password, firstName, lastName} = this.state
+        const { toggleNewUser } = this.props
         return (
             <div className='new-user-container'>
                 <form className='createNewUser-form' onSubmit={this.handleSubmit}>
                 <h3 className='new-user-message'>Please complete the new user form</h3>
-                        <div>
-                            <label>First name:</label>
-                            <input className='new-name-input' name='firstName' value={firstName} onChange={this.handleChange} />
+                        <div className='new-user-content'>
+                            <div>
+                                <input className='new-name-input' placeholder='First Name...' name='firstName' value={firstName} onChange={this.handleChange} />
+                            </div>
+                            <div>
+                                <input className='new-name-input' placeholder='Last Name...' name='lastName' value={lastName} onChange={this.handleChange} />
+                            </div>
+                            <div>
+                                <input className='new-username-input' placeholder='Email...' name='username' value={username} onChange={this.handleChange} />
+                            </div>
+                            <div>
+                                <input className='new-username-input' placeholder='Password...' type='password' name='password' value={password} onChange={this.handleChange} />
+                            </div>
                         </div>
                         <div>
-                            <label>Last name:</label>
-                            <input className='new-name-input' name='lastName' value={lastName} onChange={this.handleChange} />
+                            <button className="button-login" type="submit">Create User</button>
+                            <button className="button-login" type="submit" onClick={toggleNewUser}>Go Back</button>
                         </div>
-                        <div>
-                            <label>Email:</label>
-                            <input className='new-username-input' name='username' value={username} onChange={this.handleChange} />
-                        </div>
-                        <div>
-                            <label>Password:</label>
-                            <input className='new-username-input' type='password' name='password' value={password} onChange={this.handleChange} />
-                        </div>
-                    <button className="button-login" type="submit">Create User</button>
                 </form>
             </div>
         )

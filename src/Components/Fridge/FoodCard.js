@@ -90,8 +90,8 @@ export default class FoodCard extends Component {
                     </div>
                     <p>{this.dateDifference(food.expiration_date)} days</p>
                     <p>{food.quantity} {food.quantity_unit}</p>
-                    <button className='edit-button' onClick={() => this.toggleEditForm()}>Edit</button>
-                    <button onClick={() => deleteFood(food.id)}>Delete</button>
+                    <img className='food-card-edit-button' onClick={() => this.toggleEditForm()} src='https://image.flaticon.com/icons/svg/1159/1159633.svg' alt='update button' />
+                    <img className='food-card-delete-button' onClick={() => deleteFood(food.id)} src='https://image.flaticon.com/icons/svg/1214/1214428.svg' alt='delete button' />
                 </div>
             }
             </div>

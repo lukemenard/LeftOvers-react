@@ -52,9 +52,11 @@ export class LoginForm extends Component {
                 <form className='login-form' onSubmit={this.handleSubmit}>
                     <input className='username-input' name='username' placeholder='Enter your email...' value={username} onChange={this.handleChange} />
                     <input className='password-input' type='password' name='password' placeholder='Enter your password...' value={password} onChange={this.handleChange} />
+                    <div>
+                        <button className="button-login" type="submit"  onClick={this.handleSubmit}>Log In</button>
+                        <button className="button-newUser" type="submit" onClick={this.props.handleNewUser}>New User</button>
+                    </div>
                 </form>
-                    <button className="button-login" type="submit"  onClick={this.handleSubmit}>Log In</button>
-                    <button className="button-newUser" type="submit" onClick={this.props.handleNewUser}>New User</button>
             </div>
         );
     }

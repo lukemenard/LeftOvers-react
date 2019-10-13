@@ -21,7 +21,7 @@ export default class Login extends Component {
                 <h1 className='login-title'>Welcome to LeftOvers</h1>
                 {newUser ? null : <h4 className='login-message'>Please log in or create a new account</h4>}
                 {newUser
-                ? <CreateUserForm fetchFoods={this.props.fetchFoods} />
+                ? <CreateUserForm toggleNewUser={this.handleNewUser} fetchFoods={this.props.fetchFoods} />
                 : <LoginForm fetchFoods={this.props.fetchFoods} handleNewUser={this.handleNewUser} />
                 }
             </div>
