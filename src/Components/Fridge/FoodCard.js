@@ -65,17 +65,35 @@ export default class FoodCard extends Component {
         })
     }
 
+    dynamicHeaderColor = (date) => {
+        const days = this.dateDifference(date)
+        if(days < 4){
+            return 'header-red'
+        } else if (days > 3 && days < 7){
+            return 'header-yellow'
+        } else {
+            return 'header-green'
+        }
+    }
+
     render() {
         const { food, deleteFood, updateFood } = this.props
         console.log(food)
         return (
-            <div>
-                {this.state.editForm ? <EditFoodForm food={food} toggleEditForm={this.toggleEditForm} updateFood={updateFood}/> : null}
-                <h3>{food.food_name}</h3>
-                <p>{this.dateDifference(food.expiration_date)} days</p>
-                <p>{food.quantity} {food.quantity_unit}</p>
-                <button onClick={() => deleteFood(food.id)}>Delete</button>
-                <button onClick={() => this.toggleEditForm()}>Edit</button>
+            <div className='food-card'>
+                {this.state.editForm 
+                ? <EditFoodForm food={food} toggleEditForm={this.toggleEditForm} updateFood={updateFood}/> 
+                : 
+                <div>
+                    <div className='food-card-header'>
+                        <h3 className={`food-card-title ${this.dynamicHeaderColor(food.expiration_date)}`}>{food.food_name}</h3>
+                    </div>
+                    <p>{this.dateDifference(food.expiration_date)} days</p>
+                    <p>{food.quantity} {food.quantity_unit}</p>
+                    <button className='edit-button' onClick={() => this.toggleEditForm()}>Edit</button>
+                    <button onClick={() => deleteFood(food.id)}>Delete</button>
+                </div>
+            }
             </div>
         )
     }

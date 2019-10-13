@@ -4,19 +4,22 @@ import NavBar from '../NavBar/NavBar'
 import Fridge from '../Fridge/Fridge'
 import WasteDashboard from '../Waste/WasteDashboard'
 import Recipe from '../Recipe/Recipe'
+import './Home.css'
 
 export default class Home extends Component {
     render() {
         const { logOut } = this.props
         return (
-            <div>
+            <div className='home-container'>
                 <Router>
-                    <div>
+                    <>
                         <NavBar logOut={logOut}/>
+                        <div className='component-container'>
                         <Route exact path='/' render={(props) => <Fridge {...this.props} />} />
                         <Route exact path='/dashboard' component={WasteDashboard} />
                         <Route exact path='/recipe' component={Recipe} />
-                    </div>
+                        </div>
+                    </>
                 </Router>
             </div>
         )

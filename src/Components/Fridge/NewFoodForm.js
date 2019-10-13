@@ -35,10 +35,10 @@ export default class NewFoodForm extends Component {
     render() {
         const { food_name, expiration_date, value, quantity, quantity_unit, food_category } = this.state
         return (
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='new-food-form'>
                     <h3>Add Food</h3>
                     
-                    <label>Food Name:</label>
+                    <label>Name:</label>
                     <input type="text" name="food_name" value={food_name} onChange={this.handleChange} />
                     
                     <label>Expiration Date:</label>
@@ -63,6 +63,9 @@ export default class NewFoodForm extends Component {
                             <option value="pork">Pork</option>
                             <option value="red meat">Red Meat</option>
                             <option value="vegetable">Vegetable</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="legume">Legume</option>
                     </select>
 
                     <input type="submit" value="Submit" />

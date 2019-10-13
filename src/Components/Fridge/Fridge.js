@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FoodCard from './FoodCard'
 import NewFoodForm from './NewFoodForm'
+import './Fridge.css'
 
 export default class Fridge extends Component {
     state = {
@@ -25,11 +26,11 @@ export default class Fridge extends Component {
     render() {
         const { foodForm } = this.state
         return (
-            <div>
-                {foodForm ? null : <button onClick={this.toggleFoodForm}>Add Food</button>}
+            <div className='fridge-container'>
+                <h1 className='fridge-title'>Fridge</h1>
                 {foodForm ? <NewFoodForm addFood={this.props.addFood} toggleFoodForm={this.toggleFoodForm} /> : null}
-                <div>
-                    <h1>Fridge</h1>
+                <div className='food-cards'>                    
+                    <button className='add-food-button' onClick={this.toggleFoodForm}>Add Food</button>
                     {this.foodCards()}
                 </div>
             </div>

@@ -1,0 +1,59 @@
+.login-title {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.login-message {
+    font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.login-container {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.username-input {
+    height: 2.8rem;
+    width: 30rem;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 2rem;
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.password-input {
+    height: 2.8rem;
+    width: 30rem;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 2rem;
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.button-login {
+    height: 3rem;
+    width: 7.2rem;
+    /* border-radius: 2rem; */
+    border: none;
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.button-newUser {
+    height: 3rem;
+    width: 7.2rem;
+    /* border-radius: 2rem; */
+    border: none;
+    margin: 1rem;
+    font-size: 1rem;
+}

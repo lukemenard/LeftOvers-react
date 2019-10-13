@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CreateUserForm.css'
 
 export default class CreateUserForm extends Component {
     state = {
@@ -52,18 +53,26 @@ export default class CreateUserForm extends Component {
     render() {
         const { username, password, firstName, lastName } = this.state
         return (
-            <div>
-                <h1>Create New User</h1>
+            <div className='new-user-container'>
                 <form className='createNewUser-form' onSubmit={this.handleSubmit}>
-                    <label>First Name:</label>
-                    <input className='firstName-input' name='firstName' placeholder='Enter your first name' value={firstName} onChange={this.handleChange} />
-                    <label>Last Name:</label>
-                    <input className='lastName-input' name='lastName' placeholder='Enter your last name' value={lastName} onChange={this.handleChange} />
-                    <label>Email:</label>
-                    <input className='username-input' name='username' placeholder='Enter your email' value={username} onChange={this.handleChange} />
-                    <label>Password:</label>
-                    <input className='password-input' type='password' name='password' placeholder='Enter your password' value={password} onChange={this.handleChange} />
-                    <button className="button-login" type="submit">Log In</button>
+                <h3 className='new-user-message'>Please complete the new user form</h3>
+                        <div>
+                            <label>First name:</label>
+                            <input className='new-name-input' name='firstName' value={firstName} onChange={this.handleChange} />
+                        </div>
+                        <div>
+                            <label>Last name:</label>
+                            <input className='new-name-input' name='lastName' value={lastName} onChange={this.handleChange} />
+                        </div>
+                        <div>
+                            <label>Email:</label>
+                            <input className='new-username-input' name='username' value={username} onChange={this.handleChange} />
+                        </div>
+                        <div>
+                            <label>Password:</label>
+                            <input className='new-username-input' type='password' name='password' value={password} onChange={this.handleChange} />
+                        </div>
+                    <button className="button-login" type="submit">Create User</button>
                 </form>
             </div>
         )

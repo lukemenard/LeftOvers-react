@@ -1,0 +1,30 @@
+.navbar {
+    background-color: rgb(42, 42, 58);
+    padding: 1.5rem;
+    height: 2.5rem;
+}
+
+.navbar-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+.logout-button {
+    position: fixed;
+    height: 2rem;
+    right: 0;
+    margin-right: 2.5rem;
+}

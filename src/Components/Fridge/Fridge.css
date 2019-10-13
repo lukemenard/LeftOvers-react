@@ -1,0 +1,101 @@
+.fridge-container {
+    margin: 1rem;
+}
+
+.fridge-title {
+    text-align: center;
+    margin: 1rem;
+}
+
+.new-food-form {
+    margin-bottom: 2rem;
+}
+
+.edit-food-form {
+    font-size: .85rem;
+    text-align: left;
+}
+
+.edit-food-form-title {
+    text-align: center;
+}
+
+.edit-form-fields {
+    padding-left: .5rem;
+}
+
+.edit-form-fields select {
+    background-color: white;
+}
+
+.edit-form-fields input {
+    margin-bottom: 1rem;
+    width: 5rem;
+    text-align: center;
+    border: none;
+    border-bottom: 1px black solid;
+}
+
+.edit-food-form-submit {
+    align-items: center;
+}
+
+.edit-food-form-submit-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.food-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.food-card-header {
+    border-bottom: 1px black solid;
+}
+
+.food-card-title {
+    margin: 0;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+.add-food-button {
+    width: 10rem;
+    height: 10.7rem;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0);
+    margin-right: 2rem;
+    border-radius: 1rem;
+    border: 1px black solid;
+    margin-left: 2rem;
+    margin-top: 4.2rem;
+}
+
+.food-card {
+    border: 1px black solid;
+    width: 15rem;
+    height: fit-content;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-top: 4rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.edit-button {
+    margin-right: 1rem;
+}
+
+.header-red {
+    background-color: rgb(202, 44, 44);
+}
+
+.header-yellow {
+    background-color: rgb(247, 219, 95);
+}
+
+.header-green {
+    background-color: rgb(133, 185, 72);
+}
