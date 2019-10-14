@@ -11,7 +11,7 @@ export default class Fridge extends Component {
     foodCards = () => {
         if (this.props.foods.count !== 0){
         return this.props.foods.map(food => {
-            return <FoodCard key={food.id} food={food} deleteFood={this.props.deleteFood} updateFood={this.props.updateFood} />
+            return <FoodCard key={food.id} food={food} addWaste={this.props.addWaste} deleteFood={this.props.deleteFood} updateFood={this.props.updateFood} />
         })} else {
             return null
         }
@@ -28,7 +28,10 @@ export default class Fridge extends Component {
         return (
             <div className='fridge-container'>
                 <h1 className='fridge-title'>Fridge</h1>
-                {foodForm ? <NewFoodForm addFood={this.props.addFood} toggleFoodForm={this.toggleFoodForm} /> : null}
+                {foodForm 
+                    ? <NewFoodForm addFood={this.props.addFood} toggleFoodForm={this.toggleFoodForm} /> 
+                    : null
+                }
                 <div className='food-cards'>                    
                     <button className='add-food-button' onClick={this.toggleFoodForm}>Add Food</button>
                     {this.foodCards()}

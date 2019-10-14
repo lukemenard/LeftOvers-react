@@ -8,13 +8,15 @@ import Login from './Components/Login/Login'
 class App extends Component {
   state = {
     loggedIn: false,
-    foods: []
+    foods: [],
+    wastes: []
   }
 
   componentDidMount() {
     if (localStorage.getItem('token')) {
       this.fetchFoods()
     }
+    this.fetchWastes()
   }
 
   logIn = () => {
@@ -108,12 +110,52 @@ class App extends Component {
     }))
   }
 
+  fetchWastes = () => {
+    fetch('http://localhost:3000/wastes', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    .then(response => response.json())
+    .then(wastes => this.setState({
+      wastes: wastes
+    }))
+    .catch(error => console.log('Error:', error))
+  }
+
+  addWaste = (waste) => {
+    const body = {...waste}
+    const newState = [...this.state.wastes, waste]
+    let url = 'http://localhost:3000/wastes'
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('token')}`
+      },
+      body: JSON.stringify(body)
+    })
+    .then(this.setState({
+      wastes: newState
+    }))
+    .then(response => console.log('Success:', JSON.stringify(response)))
+    .catch(error => console.log('Error:', error))
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         {
         this.state.loggedIn
-          ? <Home logOut={this.logOut} foods={this.state.foods} addFood={this.addFood} deleteFood={this.deleteFood} updateFood={this.updateFood} />
+          ? <Home logOut={this.logOut} 
+                  foods={this.state.foods} 
+                  addFood={this.addFood} 
+                  deleteFood={this.deleteFood} 
+                  updateFood={this.updateFood} 
+                  addWaste={this.addWaste}
+                  />
           : <Login fetchFoods={this.fetchFoods} />
         }
       </div>

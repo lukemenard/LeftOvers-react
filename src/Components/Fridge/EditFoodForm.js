@@ -59,11 +59,14 @@ export default class EditFoodForm extends Component {
                         <input type="number" name="value" value={value} min="0" step="0.1" onChange={this.handleChange} />
 
                         <select name="food_category" value={food_category} onChange={this.handleChange} >
-                                <option value="">category</option>
-                                <option value="fish">Fish</option>
-                                <option value="pork">Pork</option>
-                                <option value="red meat">Red Meat</option>
-                                <option value="vegetable">Vegetable</option>
+                        <option value="">category</option>
+                            <option value="dairy">Dairy</option>
+                            <option value="fish">Fish</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="legume">Legume</option>
+                            <option value="pork">Pork</option>
+                            <option value="red meat">Red Meat</option>
+                            <option value="vegetable">Vegetable</option>
                         </select>
                     </div>
                     <div className='edit-food-form-submit-button-container'>

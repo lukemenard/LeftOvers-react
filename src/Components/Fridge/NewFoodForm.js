@@ -59,13 +59,13 @@ export default class NewFoodForm extends Component {
 
                     <select name="food_category" value={food_category} onChange={this.handleChange} >
                             <option value="">category</option>
+                            <option value="dairy">Dairy</option>
                             <option value="fish">Fish</option>
+                            <option value="fruit">Fruit</option>
+                            <option value="legume">Legume</option>
                             <option value="pork">Pork</option>
                             <option value="red meat">Red Meat</option>
                             <option value="vegetable">Vegetable</option>
-                            <option value="fruit">Fruit</option>
-                            <option value="dairy">Dairy</option>
-                            <option value="legume">Legume</option>
                     </select>
 
                     <input type="submit" value="Submit" />

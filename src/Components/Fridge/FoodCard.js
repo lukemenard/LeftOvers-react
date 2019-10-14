@@ -40,6 +40,7 @@ import CreateWasteForm from '../Waste/CreateWasteForm'
 
 export default class FoodCard extends Component {
     state = {
+        foodCard: true,
         editForm: false,
         wasteForm: false
     }
@@ -50,7 +51,7 @@ export default class FoodCard extends Component {
         let todaysDay = parseInt(splitTodaysDate[1], 10)
         let todaysMonth = parseInt(splitTodaysDate[0], 10)
         let todaysYear = parseInt(splitTodaysDate[2], 0)
-        // debugger
+        
         let splitExpirationDate = expirationDate.split('-')
         let expirationDay = parseInt(splitExpirationDate[2], 10)
         let expirationMonth = parseInt(splitExpirationDate[1], 10)
@@ -63,13 +64,21 @@ export default class FoodCard extends Component {
     
     toggleEditForm = () => {
         this.setState({
-            editForm: !this.state.editForm
+            editForm: !this.state.editForm,
+            foodCard: !this.state.foodCard
         })
     }
 
     toggleWasteForm = () => {
         this.setState({
-            wasteForm: !this.state.wasteForm
+            wasteForm: !this.state.wasteForm,
+            foodCard: !this.state.foodCard
+        })
+    }
+
+    toggleFoodCard = () => {
+        this.setState({
+            foodCard: !this.state.foodCard
         })
     }
 
@@ -85,28 +94,30 @@ export default class FoodCard extends Component {
     }
 
     render() {
-        const { food, deleteFood, updateFood } = this.props
-        console.log(food)
+        const { food, deleteFood, updateFood, addWaste } = this.props
         return (
             <div className='food-card'>
                 {this.state.wasteForm
-                ? <CreateWasteForm food={food} toggleWasteForm={this.toggleWasteForm} />
+                ? <CreateWasteForm food={food} deleteFood={deleteFood} toggleWasteForm={this.toggleWasteForm} toggleFoodCard={this.toggleFoodCard} addWaste={addWaste} />
                 : null
                 }
                 {this.state.editForm 
                 ? <EditFoodForm food={food} toggleEditForm={this.toggleEditForm} updateFood={updateFood}/> 
-                : 
-                <div>
-                    <div className='food-card-header'>
-                        <h3 className={`food-card-title ${this.dynamicHeaderColor(food.expiration_date)}`}>{food.food_name}</h3>
+                : null
+                }
+                {this.state.foodCard
+                    ? <div>
+                        <div className='food-card-header'>
+                            <h3 className={`food-card-title ${this.dynamicHeaderColor(food.expiration_date)}`}>{food.food_name}</h3>
+                        </div>
+                        <img className='food-card-delete-button' onClick={() => deleteFood(food.id)} src='https://image.flaticon.com/icons/svg/59/59836.svg' alt='delete button' />
+                        <p>{this.dateDifference(food.expiration_date)} days</p>
+                        <p>{food.quantity} {food.quantity_unit}</p>
+                        <img className='food-card-edit-button' onClick={() => this.toggleEditForm()} src='https://image.flaticon.com/icons/svg/1159/1159633.svg' alt='update button' />
+                        <img className='food-card-waste-button' onClick={() => this.toggleWasteForm()} src='https://image.flaticon.com/icons/svg/149/149343.svg' alt='waste button' />
                     </div>
-                    <img className='food-card-delete-button' onClick={() => deleteFood(food.id)} src='https://image.flaticon.com/icons/svg/59/59836.svg' alt='delete button' />
-                    <p>{this.dateDifference(food.expiration_date)} days</p>
-                    <p>{food.quantity} {food.quantity_unit}</p>
-                    <img className='food-card-edit-button' onClick={() => this.toggleEditForm()} src='https://image.flaticon.com/icons/svg/1159/1159633.svg' alt='update button' />
-                    <img className='food-card-waste-button' onClick={() => this.toggleWasteForm()} src='https://image.flaticon.com/icons/svg/149/149343.svg' alt='waste button' />
-                </div>
-            }
+                    : null
+                }
             </div>
         )
     }
