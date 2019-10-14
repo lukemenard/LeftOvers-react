@@ -57,7 +57,7 @@ class App extends Component {
 
   addFood = (food) => {
     const body = {...food}
-    const newState = [...this.state.foods, food]
+    // const newState = [...this.state.foods, food]
     let url = 'http://localhost:3000/foods'
     fetch(url, {
       method: 'POST',
@@ -67,10 +67,10 @@ class App extends Component {
       },
       body: JSON.stringify(body)
     })
-    .then(this.setState({
-      foods: newState
+    .then(response => response.json())
+    .then(response => this.setState({
+      foods: [...this.state.foods, response]
     }))
-    .then(response => console.log('Success:', JSON.stringify(response)))
     .catch(error => console.log('Error:', error))
   }
 
@@ -144,7 +144,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <div className="App">
         {

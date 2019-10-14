@@ -1,7 +1,7 @@
 .navbar {
     background-color: rgb(42, 42, 58);
     padding: 1.5rem;
-    height: 2.5rem;
+    height: 2rem;
     box-shadow: 5px 5px 5px lightgrey;
 }
 
@@ -17,6 +17,11 @@
     align-items: flex-end;
 }
 
+.links {
+    position: relative;
+    bottom: .4rem;
+}
+
 .link {
     color: white;
     text-decoration: none;
@@ -24,8 +29,15 @@
 }
 
 .logout-button {
-    position: fixed;
-    height: 1.7rem;
-    right: 0;
-    margin-right: 2.5rem;
+    /* position: fixed; */
+    height: 1.6rem;
+    /* right: 0;
+    margin-right: 2.5rem; */
+}
+
+.logout-container {
+    position: relative;
+    text-align: right;
+    top: -2.3rem;
+    left: -1rem;
 }
